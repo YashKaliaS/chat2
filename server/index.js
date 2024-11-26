@@ -13,8 +13,6 @@ app.use(
   })
 );
 dotenv.config();
-app.use(express.json());
-
 const connect_db = async () => {
   try {
     const connect = await mongoose.connect(process.env.DATABASE);
@@ -24,6 +22,17 @@ const connect_db = async () => {
   }
 };
 connect_db();
+app.use(express.json());
+app.use(
+  cors({
+    origin: "https://chat2-fidd.vercel.app", // Frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true, // If using cookies or Authorization header
+  })
+);
+
+// Handle preflight requests
+app.options("*", cors());
 app.get("/", (req, res) => {
   res.send("welcome to chat now 2023");
 });
