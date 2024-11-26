@@ -26,21 +26,17 @@ app.use(express.json());
 
 // CORS Configuration
 const allowedOrigins = [
-  "https://chat2-fidd.vercel.app", // Production frontend
+  "https://chatbackend-ochre.vercel.app", // Production frontend
+  // https://chatbackend-ochre.vercel.app/
   "http://localhost:3000", // Development frontend
 ];
 
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // Allow requests without an origin (e.g., curl, Postman)
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin:'http://localhost:3000',
+  
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
     credentials: true,
   })
 );
