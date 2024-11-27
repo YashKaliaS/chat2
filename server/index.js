@@ -26,7 +26,7 @@ app.use(express.json());
 
 // CORS Configuration
 const allowedOrigins = [
-  "https://chatbackend-ochre.vercel.app", // Production frontend
+  "https://chat-app-yash-seven.vercel.app", // Production frontend
   // https://chatbackend-ochre.vercel.app/
   "http://localhost:3000", // Development frontend
 ];
