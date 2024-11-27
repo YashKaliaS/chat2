@@ -217,8 +217,8 @@ export default function Login() {
             }}
           >
             <IconButton
-              onClick={() => window.open("https://github.com/vibhorarya12/AmazeTalk-MERN-CHAT-APP")}
-              title="vibhorarya12"
+              onClick={() => window.open("https://github.com/YashKaliaS/chat2")}
+              title="Yash Kalia"
             >
               <GitHubIcon sx={{ color: "grey" }} fontSize="large" />
             </IconButton>
